@@ -1,2 +1,5 @@
 ._*
 ._*/
+composer.phar
+vendor/
+firebase_credentials.json
