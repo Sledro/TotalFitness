@@ -16,8 +16,8 @@
                                 </a>
                             </li>
                             <?php
-                    if(isset($_SESSION['token'])){
-    if(verifyToken($_SESSION['token'], $firebase)==true){
+if (isset($_SESSION['token'])) {
+    if (verifyToken($_SESSION['token'], $firebase) == true) {
         ?>
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -67,10 +67,10 @@
 
                         </ul>
                         <?php
-    }
-}else{
+}
+} else {
     ?>
-    
+
     <li class="nav-item" style="float:right;">
     <a class="nav-link" href="./index.php">
         <span class="no-icon">Log In</span>

@@ -33,3 +33,26 @@ function sec_session_start() {
     session_start();            // Start the PHP session 
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
+
+//Used to add a a user to the database. Input is sanitized before it gets here.
+function register($email, $password, $passwordConfirm, $firebase){
+    $error=false;
+
+    if($password!=$passwordConfirm){
+        $error=1;
+        return "Your Passwords did not match!";
+    }
+    if($error==false){
+        $auth = $firebase->getAuth();
+        try{
+        
+         $response = $auth->createUserWithEmailAndPassword($email, $password);
+         return "success";
+        } catch (Exception $e) {
+            $response = $e->getMessage();
+            return $response;
+          }
+        
+    
+    }
+}

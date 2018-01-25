@@ -18,8 +18,8 @@
                         </a>
                     </li>
                     <?php
-                    if(isset($_SESSION['token'])){
-    if(verifyToken($_SESSION['token'], $firebase)==true){
+if (isset($_SESSION['token'])) {
+    if (verifyToken($_SESSION['token'], $firebase) == true) {
         ?>
                     <li>
                         <a class="nav-link" href="#">
@@ -64,16 +64,16 @@
                         </a>
                     </li>
                     <?php
-    }
-}else{
+}
+} else {
     ?>
-    <li>
-    <a class="nav-link" href="#">
-        <i class="nc-icon nc-badge"></i>
-        <p>Register</p>
-    </a>
-</li> 
-<?
+                <li>
+                <a class="nav-link" href="./register.php">
+                    <i class="nc-icon nc-badge"></i>
+                    <p>Register</p>
+                </a>
+            </li>
+            <?
 }
 ?>
                 </ul>
